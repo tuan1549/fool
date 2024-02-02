@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phong thư</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f5f5f5;
+  }
+
+  .envelope {
+    position: relative;
+    width: 400px;
+    height: 300px;
+    background-color: #ffe4e1;
+    border: 2px solid #f08080;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .envelope:before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    left: -40px;
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    border-radius: 50%;
+    transform: rotate(45deg);
+  }
+
+  .envelope .letter {
+    position: absolute;
+    top: 20px; /* Điều chỉnh vị trí của bức thư */
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border: 2px solid #f08080;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+  }
+
+  .envelope:hover .letter {
+    background-color: #ffe4e1;
+  }
+
+  .message {
+    color: #f08080;
+    text-align: center;
+    margin-bottom: 20px; /* Điều chỉnh khoảng cách giữa phong thư và dòng chữ */
+  }
+</style>
+</head>
+<body>
+<div class="envelope" onclick="showLetter()">
+  <div class="letter" id="letterContent" style="display: none;">
+    <div style="text-align: center;">
+      <h2>こんばんは,私 の お姫様</h2>
+      <p>Bé nhớ chị nhiều lắm ,
+		chị bớt ớm chưa ạ ?.</p>
+    </div>
+  </div>
+  <p class="message"> click in the window pls 🥰🫶 .</p>
+</div>
+
+<script>
+function showLetter() {
+  var letterContent = document.getElementById("letterContent");
+  if (letterContent.style.display === "none") {
+    letterContent.style.display = "block";
+  } else {
+    letterContent.style.display = "none";
+  }
+}
+</script>
+
+</body>
+</html>
